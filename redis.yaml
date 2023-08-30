@@ -3,9 +3,7 @@
   become: yes
   tasks:
   - name: install rpms
-    ansible.builtin.yum:
-      name: https://rpms.remirepo.net/enterprise/remi-release-8.rpm -y
-      state: installed
+    ansible.builtin.shell: "https://rpms.remirepo.net/enterprise/remi-release-8.rpm -y"
   - name: Enable Redis 6.2 
     ansible.builtin.service:
       name: Redis 6.2
