@@ -1,2 +1,5 @@
 [mongodb]
 mongodb.linuxdevops.online
+
+[catalogue]
+catalogue.linuxdevops.online
