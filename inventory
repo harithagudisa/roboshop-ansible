@@ -6,3 +6,6 @@ catalogue.linuxdevops.online
 
 [web]
 web.linuxdevops.online
+
+[redis]
+redis.linuxdevops.online
