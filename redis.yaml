@@ -2,13 +2,13 @@
   hosts: redis
   become: yes
   tasks:
-  - name: install rpm
+  - name: install rpms
     ansible.builtin.yum:
       name: https://rpms.remirepo.net/enterprise/remi-release-8.rpm -y
       state: installed
-  - name: Enable Redis 6.2 from package streams
+  - name: Enable Redis 6.2 
     ansible.builtin.service:
-      name: enable Redis 6.2
+      name: Redis 6.2
       state: started
   - name: install redis
     ansible.builtin.yum:
