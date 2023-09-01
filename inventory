@@ -12,3 +12,19 @@ redis.linuxdevops.online
 
 [user]
 user.linuxdevops.online
+
+[cart]
+cart.linuxdevops.online
+
+[mysql]
+mysql.linuxdevops.online
+
+[rabbitmq]
+rabbitmq.linuxdevops.online
+
+[shipping]
+shipping.linuxdevops.online
+
+[payment]
+payment.linuxdevops.online
+
