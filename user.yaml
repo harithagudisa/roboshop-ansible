@@ -1,0 +1,27 @@
+- name: install user component
+  hosts: user
+  become: yes
+  tasks:
+  - name: setup NODEJS repo
+    ansible.builtin.shell: "curl -sL https://rpm.nodesource.com/setup_lts.x | bash"
+  - name: install nodejs
+    ansible.builtin.yum:
+      name: nodejs
+      state: installed
+  - name: check user roboshop exit or not
+    ansible.builtin.command: id roboshop
+    register: out #output is variable name
+    ignore_errors: true
+  - when: out.rc != 0
+    name: create user roboshop
+    become: yes # we need sudo access for this task only
+    ansible.builtin.user:
+      name: roboshop
+  - name: check /app directory exists or not
+    ansible.builtin.stat:
+      path: /app
+    register: directory
+  - name: print the directory stats
+    ansible.builtin.debug:
+      msg: "output: {{directory}}"    
+
